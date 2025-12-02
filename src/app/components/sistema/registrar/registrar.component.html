@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+<div class="registrar">
+  <h1>Insira seus dados</h1>
+
+  <form [formGroup]="registrarForm" (ngSubmit)="onRegistrar()">
+
+    <input
+      type="text"
+      placeholder="Nome"
+      formControlName="nome"
+    />
+    <p class="requisitos"
+       [hidden]="!(registrarForm.get('nome')?.invalid && registrarForm.get('nome')?.touched)">
+      *Digite um nome válido
+    </p>
+
+    <input
+      type="email"
+      placeholder="Email"
+      formControlName="email"
+    />
+    <p class="requisitos"
+       [hidden]="!(registrarForm.get('email')?.invalid && registrarForm.get('email')?.touched)">
+      *Digite um email válido
+    </p>
+
+    <input
+      type="password"
+      placeholder="Senha"
+      formControlName="senha"
+      (focus)="mostrarRequisito = true"
+      (blur)="mostrarRequisito = false"
+    />
+    <p class="requisitos" [hidden]="!mostrarRequisito">
+      *Sua senha deve ter ao menos 6 caracteres
+    </p>
+
+    <input
+      type="password"
+      placeholder="Confirme sua senha"
+      formControlName="confirmarSenha"
+    />
+    <p class="requisitos"
+       [hidden]="!(registrarForm.hasError('senhasDiferentes') && registrarForm.get('confirmarSenha')?.touched)">
+      As senhas não coincidem!
+    </p>
+
+    <button type="submit" class="registrar-botao" [disabled]="registrarForm.invalid">
+      Registrar
+    </button>
+  </form>
+
+  <p class="login-texto">
+    Já tem uma conta?
+  </p>
+  <a class="login-link" (click)="navigateToLogin()">
+    Entre agora!
+  </a>
+
+  <a class="termsandpolitics-link" (click)="navigateToTermsAndPolitics()">
+    Ao cadastrar suas informações, você concorda com os nossos Termos de Uso e Política de Privacidade
+  </a>
+
+</div>

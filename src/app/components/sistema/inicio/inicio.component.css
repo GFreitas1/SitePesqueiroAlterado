@@ -1,0 +1,56 @@
+.content-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.content-page h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sub-titulo {
+  font-size: 22px;
+  color: gray;
+  margin-bottom: 30px;
+}
+
+.botao-cadastro {
+  width: 14%;
+  padding: 14px;
+  background-color: #3A95DF;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.botao-cadastro a {
+  text-decoration: none;
+  color: black;
+}
+
+.botao-cadastro:hover {
+  transform: scale(1.1);
+}
+.cliente-texto {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.cliente-texto a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.cliente-texto a:hover {
+  text-decoration: underline;
+}

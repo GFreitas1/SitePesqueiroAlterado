@@ -1,0 +1,31 @@
+<app-headercadastrado></app-headercadastrado>
+
+<div class="escolha-sistema">
+  <h1 class="titulo">Escolha um sistema</h1>
+  <p class="subtitulo">Selecione uma opção para continuar</p>
+
+  <div class="cartoes">
+    <button
+      type="button"
+      class="cartao"
+      [ngClass]="{ selecionado: selecionado === 'pagamento' }"
+      (click)="selecionar('pagamento')">
+      <img [src]="propicon" alt="Proprietário" class="icone-prop" />
+      <p class="legenda">Proprietário</p>
+    </button>
+
+    <button
+      type="button"
+      class="cartao"
+      [ngClass]="{ selecionado: selecionado === 'iniciocliente' }"
+      (click)="selecionar('iniciocliente')">
+      <img [src]="usericon" alt="iniciocliente" class="icone-cliente" />
+      <p class="legenda">Cliente</p>
+    </button>
+  </div>
+  <a [href]="'/' + selecionado">
+  <button class="botao-continuar" [disabled]="!selecionado" (click)="continuar()">
+    Continuar
+  </button>
+  </a>
+</div>
